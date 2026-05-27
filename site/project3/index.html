@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 03 | 節慶活動設計與成效追蹤儀表板</title>
+  <meta
+    name="description"
+    content="以新春祈福大作戰為題的 Live Ops 案例，展示活動節奏、獎勵經濟、任務完成與 KPI 追蹤設計。"
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../case-study.css">
+</head>
+<body class="theme-liveops">
+  <div class="case-shell">
+    <header class="case-topbar">
+      <div class="case-brand">
+        <span class="case-brand-mark">P3</span>
+        <div>
+          <p class="eyebrow">LIVE OPS DESIGN</p>
+          <h1>節慶活動設計與成效追蹤儀表板</h1>
+        </div>
+      </div>
+      <div class="case-actions">
+        <a class="case-link-ghost" href="../index.html">回首頁</a>
+        <a class="case-link" href="#operations">看營運頁面</a>
+      </div>
+    </header>
+
+    <section class="case-hero">
+      <div class="case-hero-copy">
+        <p class="eyebrow">Project 03</p>
+        <h2>把節慶活動從設計方案，做成一頁可以討論 KPI 的 Live Ops 展示。</h2>
+        <p>
+          本專案以節慶活動為主題，整理活動玩法、獎勵經濟、任務節奏與 KPI 追蹤方式，展示 Live Ops 與營運分析能力。
+        </p>
+        <div class="case-badges">
+          <span class="case-badge">活動規則</span>
+          <span class="case-badge">經濟平衡</span>
+          <span class="case-badge">成效儀表板</span>
+          <span class="case-badge">Python KPI</span>
+          <span class="case-badge">pandas</span>
+        </div>
+        <div class="case-hero-actions">
+          <a class="case-link" href="#operations">看活動執行節奏</a>
+          <a class="case-link-ghost" href="#interview">看面試講法</a>
+        </div>
+        <div class="case-dossier-strip">
+          <a class="case-dossier-card" href="../../works/project-03-event-ops-dashboard/README.md">
+            <span class="eyebrow">README</span>
+            <strong>專案目標與交付物</strong>
+            <p>快速理解這個活動案例的目標、交付物與適合怎麼展示。</p>
+          </a>
+          <a class="case-dossier-card" href="../../works/project-03-event-ops-dashboard/event-brief.md">
+            <span class="eyebrow">Event Brief</span>
+            <strong>活動背景與玩法核心</strong>
+            <p>把節慶活動從主題、玩法到目標拆成可討論的設計結構。</p>
+          </a>
+          <a class="case-dossier-card" href="../../works/project-03-event-ops-dashboard/economy-table.csv">
+            <span class="eyebrow">Economy Table</span>
+            <strong>經濟與獎勵平衡</strong>
+            <p>補上活動幣與保底兌換，讓專案更像真的 Live Ops 提案。</p>
+          </a>
+          <a class="case-dossier-card" href="../../works/project-03-event-ops-dashboard/python/liveops_kpi_simulator.py">
+            <span class="eyebrow">Python Script</span>
+            <strong>可執行的 KPI 模擬</strong>
+            <p>把每日 KPI 與經濟表一起讀進來，輸出活動期營運摘要。</p>
+          </a>
+          <a class="case-dossier-card" href="../../works/project-03-event-ops-dashboard/python/liveops_kpi_pandas.py">
+            <span class="eyebrow">pandas Workflow</span>
+            <strong>Excel + PNG + 營運報告</strong>
+            <p>用 pandas 與 matplotlib 做出更像分析師日常交付的資料處理流程。</p>
+          </a>
+        </div>
+      </div>
+
+      <aside class="case-hero-panel">
+        <div class="hero-panel-card">
+          <p class="eyebrow">Event Name</p>
+          <strong>新春祈福大作戰</strong>
+          <p>以每日任務、祈福幣、福袋與保底兌換組成短期回流與活動參與主循環。</p>
+        </div>
+        <div class="hero-panel-card">
+          <p class="eyebrow">Primary Goal</p>
+          <strong>提升回流、參與與活動期付費轉換</strong>
+          <p>活動不是只衝營收，而是要在不破壞經濟前提下，拉起回流與參與。</p>
+        </div>
+        <div class="hero-panel-card">
+          <p class="eyebrow">Deliverable</p>
+          <strong>活動設計文件 + 經濟表 + 時程 + KPI 面板</strong>
+          <p>這樣的組合更像真正能跟營運、PM 與數據團隊討論的提案格式。</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="metric-grid">
+      <article class="metric-card">
+        <span>活動參與率</span>
+        <strong>61%</strong>
+        <p>主入口與每日任務是最核心的啟動點，參與率要先拉到六成以上。</p>
+      </article>
+      <article class="metric-card">
+        <span>回流玩家</span>
+        <strong>+18%</strong>
+        <p>活動應優先吸引沉默玩家回來，不只服務原本高活躍用戶。</p>
+      </article>
+      <article class="metric-card">
+        <span>禮包轉換率</span>
+        <strong>4.8%</strong>
+        <p>付費轉換不是唯一目標，但能反映獎勵節奏與價值包裝是否合理。</p>
+      </article>
+      <article class="metric-card">
+        <span>任務完成率</span>
+        <strong>72%</strong>
+        <p>如果每日任務掉太快，就要回頭檢查門檻、流程與提醒節奏。</p>
+      </article>
+    </section>
+
+    <section class="case-section" id="operations">
+      <div class="case-section-heading">
+        <div>
+          <p class="eyebrow">Operations</p>
+          <h3>活動最重要的是節奏感，不是把所有獎勵同一天丟出去</h3>
+        </div>
+        <p>這一頁把活動前中後的節點、獎勵經濟和 KPI 追蹤整理成可直接講解的版面。</p>
+      </div>
+
+      <div class="case-grid">
+        <article class="case-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Schedule</p>
+              <h3>活動節奏時間軸</h3>
+            </div>
+            <span class="mini-tag">Runbook</span>
+          </div>
+          <div class="schedule-list" id="schedule-list"></div>
+        </article>
+
+        <article class="case-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Economy</p>
+              <h3>祈福幣與保底兌換</h3>
+            </div>
+            <span class="mini-tag">Economy</span>
+          </div>
+          <div class="economy-list" id="economy-list"></div>
+        </article>
+      </div>
+
+      <div class="case-grid" style="margin-top: 16px;">
+        <article class="case-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Mission Health</p>
+              <h3>每日任務完成率</h3>
+            </div>
+            <span class="mini-tag">Progress</span>
+          </div>
+          <div class="mission-bars" id="mission-bars"></div>
+        </article>
+
+        <article class="case-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">KPI Board</p>
+              <h3>活動後要看的核心面板</h3>
+            </div>
+            <span class="mini-tag">KPI</span>
+          </div>
+          <div class="kpi-grid" id="kpi-grid"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="case-section-heading">
+        <div>
+          <p class="eyebrow">Design Focus</p>
+          <h3>專案重點</h3>
+        </div>
+        <p>本專案聚焦活動設計、獎勵平衡、營運指標與成效判讀，補足 Live Ops 相關能力展示。</p>
+      </div>
+      <div class="case-card-grid">
+        <article class="case-card">
+          <p class="eyebrow">Retention</p>
+          <h4>活動入口要替回流玩家降低重返門檻</h4>
+          <p>每日任務與保底兌換讓玩家即使不衝榜，也有清楚而穩定的參與理由。</p>
+        </article>
+        <article class="case-card">
+          <p class="eyebrow">Economy</p>
+          <h4>獎勵不能只堆量，還要避免通膨</h4>
+          <p>活動幣產出、消耗與兌換門檻要先算清楚，避免短期刺激換來長期經濟失衡。</p>
+        </article>
+        <article class="case-card">
+          <p class="eyebrow">Measurement</p>
+          <h4>上線後要能快速判斷活動到底值不值得延長</h4>
+          <p>用參與率、回流率、任務完成率與 ARPPU 做同頁判讀，才有辦法快速做營運決策。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="case-section-heading">
+        <div>
+          <p class="eyebrow">Data Ops Layer</p>
+          <h3>這個 Live Ops 案例也補上了資料處理層，不只停在活動概念</h3>
+        </div>
+        <p>如果你投的是偏數據或營運分析的職缺，這一層會讓作品更像真正能落地的工作成果。</p>
+      </div>
+      <div class="case-card-grid">
+        <article class="case-card">
+          <p class="eyebrow">Input</p>
+          <h4>每日 KPI 假資料</h4>
+          <p>把 DAU、參與率、回流玩家、付費與營收整理成每日表格，方便模擬活動後追數據的樣子。</p>
+        </article>
+        <article class="case-card">
+          <p class="eyebrow">Logic</p>
+          <h4>Python 串 KPI 與經濟表</h4>
+          <p>`liveops_kpi_simulator.py` 會同時讀入活動 KPI 與 `economy-table.csv`，輸出營運摘要與經濟風險檢查。</p>
+        </article>
+        <article class="case-card">
+          <p class="eyebrow">Output</p>
+          <h4>pandas 工作流補足正式交付物</h4>
+          <p>`liveops_kpi_pandas.py` 會輸出 Excel、PNG 圖與 Markdown 摘要，讓案例更接近真實分析流程。</p>
+        </article>
+        <article class="case-card">
+          <p class="eyebrow">Report</p>
+          <h4>把結果整理成可講的營運報告</h4>
+          <p>最後會輸出 JSON 與 Markdown，讓你可以直接拿去接儀表板或面試報告。</p>
+        </article>
+      </div>
+      <div class="case-file-grid">
+        <a class="case-file-card" href="../../works/project-03-event-ops-dashboard/mock-data/daily_event_kpis.csv">
+          <span class="eyebrow">Tech 01</span>
+          <strong>Daily KPI Data</strong>
+          <p>活動每天追蹤的核心欄位，包含回流、參與、付費與營收。</p>
+        </a>
+        <a class="case-file-card" href="../../works/project-03-event-ops-dashboard/python/liveops_kpi_simulator.py">
+          <span class="eyebrow">Tech 02</span>
+          <strong>Python Script</strong>
+          <p>把活動數字跑成摘要，展示你也能處理營運分析工作流。</p>
+        </a>
+        <a class="case-file-card" href="../../works/project-03-event-ops-dashboard/python/liveops_kpi_pandas.py">
+          <span class="eyebrow">Tech 03</span>
+          <strong>pandas Script</strong>
+          <p>輸出 Excel、PNG 與更正式的 KPI 分析報告。</p>
+        </a>
+        <a class="case-file-card" href="../../works/project-03-event-ops-dashboard/outputs/liveops_report.md">
+          <span class="eyebrow">Tech 04</span>
+          <strong>Python Output</strong>
+          <p>輸出的營運摘要，面試時可直接拿來講 KPI 觀察與風險。</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="case-section-heading">
+        <div>
+          <p class="eyebrow">Formal Report</p>
+          <h3>這個案例現在也整理成正式分析報告，不只是一頁活動展示</h3>
+        </div>
+        <p>正式報告版整理了活動目標、KPI 判讀、經濟平衡與營運建議，方便快速理解專案內容。</p>
+      </div>
+      <div class="case-card-grid">
+        <article class="case-card">
+          <p class="eyebrow">Report 01</p>
+          <h4>活動目標與 KPI 拆解</h4>
+          <p>先把回流、參與、任務完成與營收拆成可觀察的核心問題。</p>
+        </article>
+        <article class="case-card">
+          <p class="eyebrow">Report 02</p>
+          <h4>中段節奏與經濟平衡判讀</h4>
+          <p>從 Day 4 掉點與免費產出 / 消耗比去看活動是否健康。</p>
+        </article>
+        <article class="case-card">
+          <p class="eyebrow">Report 03</p>
+          <h4>營運建議與驗證規劃</h4>
+          <p>最後整理成可以交給 PM、營運與數據團隊一起討論的建議。</p>
+        </article>
+      </div>
+      <div class="case-file-grid">
+        <a class="case-file-card" href="../../works/project-03-event-ops-dashboard/analysis-report.md">
+          <span class="eyebrow">Report File</span>
+          <strong>analysis-report.md</strong>
+          <p>正式報告版，把活動 KPI 與建議整理成可直接面試展示的版本。</p>
+        </a>
+        <a class="case-file-card" href="../../works/project-03-event-ops-dashboard/outputs/liveops_report.md">
+          <span class="eyebrow">Summary File</span>
+          <strong>Python Summary</strong>
+          <p>基礎 KPI 模擬輸出的摘要，可接回正式報告或面試講稿。</p>
+        </a>
+        <a class="case-file-card" href="../../works/project-03-event-ops-dashboard/outputs/liveops_report_pandas.md">
+          <span class="eyebrow">pandas Summary</span>
+          <strong>Markdown Report</strong>
+          <p>用 pandas 工作流輸出的營運摘要，格式更像分析師日常產出。</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="case-section-heading">
+        <div>
+          <p class="eyebrow">pandas Deliverables</p>
+          <h3>這一版開始具備更像資料分析師交付的 Excel 與 PNG 產物</h3>
+        </div>
+        <p>除了原本的 JSON / Markdown，現在也補上工作簿與 matplotlib 圖表，讓這個案子更完整。</p>
+      </div>
+      <div class="case-file-grid chart-preview-grid">
+        <a class="case-file-card chart-preview-card" href="../../works/project-03-event-ops-dashboard/outputs/chart-liveops-participation-pandas.png">
+          <span class="eyebrow">pandas Chart 01</span>
+          <strong>Participation & Return</strong>
+          <img src="../../works/project-03-event-ops-dashboard/outputs/chart-liveops-participation-pandas.png" alt="pandas 產出的活動參與與回流圖">
+          <p>把參與率與回流玩家一起看，判斷活動是不是有真正把人帶回來。</p>
+        </a>
+        <a class="case-file-card chart-preview-card" href="../../works/project-03-event-ops-dashboard/outputs/chart-liveops-revenue-pandas.png">
+          <span class="eyebrow">pandas Chart 02</span>
+          <strong>Revenue & ARPPU</strong>
+          <img src="../../works/project-03-event-ops-dashboard/outputs/chart-liveops-revenue-pandas.png" alt="pandas 產出的營收與 ARPPU 圖">
+          <p>用營收與 ARPPU 一起判斷尾段刺激是否帶來健康轉換。</p>
+        </a>
+        <a class="case-file-card" href="../../works/project-03-event-ops-dashboard/outputs/liveops-analysis-pandas.xlsx">
+          <span class="eyebrow">pandas Output</span>
+          <strong>Excel Workbook</strong>
+          <p>包含 overview、daily view、package sales 與 economy summary 多個工作表。</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="case-section-heading">
+        <div>
+          <p class="eyebrow">Deliverables</p>
+          <h3>網站展示版之外，作品內容已經分拆成真正可延伸的專案檔案</h3>
+        </div>
+        <p>實際文件與表格素材整理在 `works/project-03-event-ops-dashboard/`。</p>
+      </div>
+      <ul class="case-data-list">
+        <li><strong>event-brief.md</strong><br>活動名稱、核心玩法、目標與主要風險。</li>
+        <li><strong>economy-table.csv</strong><br>活動幣、福袋、保底獎勵與兌換門檻的基礎平衡表。</li>
+        <li><strong>schedule.md</strong><br>活動前、中、後的執行節奏與提醒節點。</li>
+        <li><strong>mock-data/daily_event_kpis.csv</strong><br>活動每日 KPI 與營收假資料。</li>
+        <li><strong>python/liveops_kpi_simulator.py</strong><br>串接 KPI 與經濟表的 Python 模擬腳本。</li>
+        <li><strong>python/liveops_kpi_pandas.py</strong><br>用 pandas 與 matplotlib 輸出 Excel、PNG 與 Markdown 報表。</li>
+        <li><strong>analysis-report.md</strong><br>正式報告版，整理成可投遞與可面試展示的營運分析敘事。</li>
+        <li><strong>outputs/liveops-analysis-pandas.xlsx</strong><br>更像正式分析交付物的工作簿版本。</li>
+        <li><strong>dashboard-spec.md</strong><br>定義要追的 KPI 與儀表板區塊。</li>
+      </ul>
+      <div class="case-file-grid">
+        <a class="case-file-card" href="../../works/project-03-event-ops-dashboard/README.md">
+          <span class="eyebrow">Dossier 01</span>
+          <strong>README</strong>
+          <p>整理這個案子的定位、目標與最後應該交出什麼。</p>
+        </a>
+        <a class="case-file-card" href="../../works/project-03-event-ops-dashboard/event-brief.md">
+          <span class="eyebrow">Dossier 02</span>
+          <strong>Event Brief</strong>
+          <p>快速交代活動題目、玩家目標與活動風險。</p>
+        </a>
+        <a class="case-file-card" href="../../works/project-03-event-ops-dashboard/analysis-report.md">
+          <span class="eyebrow">Dossier 03</span>
+          <strong>Formal Report</strong>
+          <p>把活動 KPI、節奏與營運建議整理成一份完整分析報告。</p>
+        </a>
+        <a class="case-file-card" href="../../works/project-03-event-ops-dashboard/dashboard-spec.md">
+          <span class="eyebrow">Dossier 04</span>
+          <strong>Dashboard Spec</strong>
+          <p>讓這個專案不只停在活動點子，而是有後續追蹤與評估方式。</p>
+        </a>
+        <a class="case-file-card" href="../../works/project-03-event-ops-dashboard/outputs/liveops-analysis-pandas.xlsx">
+          <span class="eyebrow">Dossier 05</span>
+          <strong>pandas Workbook</strong>
+          <p>把 daily KPI、package sales 與 economy summary 整理到 Excel。</p>
+        </a>
+        <a class="case-file-card" href="../../works/project-03-event-ops-dashboard/outputs/liveops_summary.json">
+          <span class="eyebrow">Dossier 06</span>
+          <strong>KPI Output</strong>
+          <p>活動數字跑完後的結構化結果，補足真實營運分析的樣貌。</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="case-section" id="interview">
+      <div class="case-section-heading">
+        <div>
+          <p class="eyebrow">Project Summary</p>
+          <h3>專案簡述</h3>
+        </div>
+        <p>以下內容可直接作為作品欄或履歷中的專案說明。</p>
+      </div>
+      <article class="interview-card">
+        <p>
+          本專案以節慶活動為題，規劃活動玩法、獎勵經濟、任務節奏與 KPI 追蹤方式，並透過 Python 與 pandas 產出營運摘要、Excel 工作簿、圖表與正式報告。重點在展示 Live Ops 規劃與營運分析能力。
+        </p>
+      </article>
+    </section>
+  </div>
+
+  <script type="module" src="./project3.js"></script>
+</body>
+</html>

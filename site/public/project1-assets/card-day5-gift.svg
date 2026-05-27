@@ -1,0 +1,24 @@
+<svg width="240" height="320" viewBox="0 0 240 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="240" height="320" rx="28" fill="url(#bg)"/>
+  <rect x="16" y="16" width="208" height="288" rx="22" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+  <circle cx="120" cy="118" r="60" fill="rgba(255,225,195,0.14)"/>
+  <rect x="64" y="118" width="112" height="96" rx="18" fill="url(#box)"/>
+  <path d="M118 84C94 84 88 118 116 122H124C152 118 146 84 122 84H118Z" fill="url(#ribbon)"/>
+  <path d="M120 96V214" stroke="rgba(255,244,221,0.9)" stroke-width="14" stroke-linecap="round"/>
+  <path d="M64 158H176" stroke="rgba(255,244,221,0.9)" stroke-width="14" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="bg" x1="18" y1="12" x2="224" y2="306" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5B2417"/>
+      <stop offset="0.54" stop-color="#A24B29"/>
+      <stop offset="1" stop-color="#F0B15B"/>
+    </linearGradient>
+    <linearGradient id="box" x1="120" y1="118" x2="120" y2="214" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE8BF"/>
+      <stop offset="1" stop-color="#F09B54"/>
+    </linearGradient>
+    <linearGradient id="ribbon" x1="120" y1="84" x2="120" y2="122" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF8E2"/>
+      <stop offset="1" stop-color="#FFCF77"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,4 @@
+﻿segment,players,retained_d3_pct,retained_d7_pct
+light_payer,2,100.0,50.0
+mid_payer,1,100.0,100.0
+non_payer,9,44.4,22.2

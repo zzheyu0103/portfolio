@@ -1,0 +1,7 @@
+node_modules
+dist
+.venv
+dist-fixed
+dist-final
+dist-pages
+.DS_Store

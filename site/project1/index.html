@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 01 Prototype | 新手流程首頁</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./project1.css">
+</head>
+<body data-page="home">
+  <div class="game-shell">
+    <header class="game-topbar">
+      <div class="game-brand">
+        <span class="game-brand-mark">P1</span>
+        <div>
+          <p class="eyebrow" id="page-eyebrow">HOME</p>
+          <h1 id="page-title">卡牌新手流程 Demo</h1>
+        </div>
+      </div>
+      <div class="game-top-actions">
+        <a class="game-button-ghost" href="../index.html">回作品集</a>
+        <button class="game-button-ghost" data-reset-flow type="button">重設流程</button>
+      </div>
+    </header>
+
+    <section class="game-day-selector">
+      <div class="game-day-selector-copy">
+        <p class="eyebrow">DAY SELECT</p>
+        <strong id="day-selector-title"></strong>
+        <p id="day-selector-text"></p>
+      </div>
+      <div class="game-day-selector-buttons" id="day-selector-buttons"></div>
+    </section>
+
+    <section class="game-hero">
+      <p class="eyebrow" id="home-eyebrow">GAME FLOW ENTRY</p>
+      <h2 id="home-title"></h2>
+      <p id="home-text"></p>
+      <div class="game-top-actions">
+        <a class="game-button" href="./lobby.html">進入新手大廳</a>
+        <a class="game-button-ghost" href="./missions.html">直接看任務頁</a>
+      </div>
+    </section>
+
+    <section class="game-action-list" id="home-overview" style="margin-top:18px;"></section>
+
+    <section class="game-card-grid" id="home-dashboard" style="margin-top:18px;"></section>
+  </div>
+  <script type="module" src="./project1.js"></script>
+  <script>
+    if (window.location.protocol === "file:") {
+      const loadFallback = (src) => {
+        const script = document.createElement("script");
+        script.src = src;
+        script.defer = true;
+        script.dataset.fallback = "true";
+        return script;
+      };
+
+      const primary = loadFallback("./project1.js");
+      primary.onerror = () => {
+        if (!document.querySelector('script[data-fallback="runtime"]')) {
+          const runtime = loadFallback("../project1-runtime.js");
+          runtime.dataset.fallback = "runtime";
+          document.head.appendChild(runtime);
+        }
+      };
+      document.head.appendChild(primary);
+    }
+  </script>
+</body>
+</html>

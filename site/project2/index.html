@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 02 | 手遊留存異常分析與玩家分群提案</title>
+  <meta
+    name="description"
+    content="以 D7 留存異常下滑為題的手遊分析案例，包含 cohort 趨勢、關卡卡關、玩家分群與可執行優化建議。"
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../case-study.css">
+</head>
+<body class="theme-analysis">
+  <div class="case-shell">
+    <header class="case-topbar">
+      <div class="case-brand">
+        <span class="case-brand-mark">P2</span>
+        <div>
+          <p class="eyebrow">RETENTION ANALYSIS</p>
+          <h1>手遊留存異常分析與玩家分群提案</h1>
+        </div>
+      </div>
+      <div class="case-actions">
+        <a class="case-link-ghost" href="../index.html">回首頁</a>
+        <a class="case-link" href="#insights">看分析結論</a>
+      </div>
+    </header>
+
+    <section class="case-hero">
+      <div class="case-hero-copy">
+        <p class="eyebrow">Project 02</p>
+        <h2>把 D7 留存異常下滑，拆成能驗證的分析流程與儀表板。</h2>
+        <p>
+          本專案模擬手遊 D7 留存異常下滑的情境，透過 cohort、玩家分群、關卡卡點與事件分析，整理出可執行的優化建議。
+        </p>
+        <div class="case-badges">
+          <span class="case-badge">Cohort 留存</span>
+          <span class="case-badge">玩家分群</span>
+          <span class="case-badge">KPI 驗證</span>
+          <span class="case-badge">Python / SQL</span>
+          <span class="case-badge">pandas</span>
+        </div>
+        <div class="case-hero-actions">
+          <a class="case-link" href="#dashboard">看儀表板</a>
+          <a class="case-link-ghost" href="#interview">看面試講法</a>
+        </div>
+        <div class="case-dossier-strip">
+          <a class="case-dossier-card" href="../../works/project-02-retention-analysis/README.md">
+            <span class="eyebrow">README</span>
+            <strong>專案目標與交付物</strong>
+            <p>快速理解這個分析案例想解的問題與最終該長成什麼樣子。</p>
+          </a>
+          <a class="case-dossier-card" href="../../works/project-02-retention-analysis/analysis-brief.md">
+            <span class="eyebrow">Analysis Brief</span>
+            <strong>問題背景與分析假設</strong>
+            <p>把「D7 掉很多」拆成可觀察、可切分、可驗證的分析流程。</p>
+          </a>
+          <a class="case-dossier-card" href="../../works/project-02-retention-analysis/analysis-report.md">
+            <span class="eyebrow">Formal Report</span>
+            <strong>正式分析報告版</strong>
+            <p>把問題、圖表、發現與行動建議整理成可直接面試展示的版本。</p>
+          </a>
+          <a class="case-dossier-card" href="../../works/project-02-retention-analysis/sql/cohort_queries.sql">
+            <span class="eyebrow">SQL Practice</span>
+            <strong>查詢與驗證思路</strong>
+            <p>補上資料查詢層，讓這個案子更像真的分析工作樣貌。</p>
+          </a>
+          <a class="case-dossier-card" href="../../works/project-02-retention-analysis/python/retention_analysis.py">
+            <span class="eyebrow">Python Script</span>
+            <strong>可執行的分析流程</strong>
+            <p>直接讀取假資料並輸出 cohort、segment 與 churn signal 結果。</p>
+          </a>
+          <a class="case-dossier-card" href="../../works/project-02-retention-analysis/python/retention_analysis_pandas.py">
+            <span class="eyebrow">pandas Workflow</span>
+            <strong>Excel + PNG + 報表輸出</strong>
+            <p>用 pandas 與 matplotlib 做出更像分析師交付物的資料處理流程。</p>
+          </a>
+        </div>
+      </div>
+
+      <aside class="case-hero-panel">
+        <div class="hero-panel-card">
+          <p class="eyebrow">Problem</p>
+          <strong>D1 正常，但 D7 比上月下降 11%</strong>
+          <p>先排除流量結構變化，再聚焦新玩家 cohort 在 Day 3 到 Day 7 的斷點。</p>
+        </div>
+        <div class="hero-panel-card">
+          <p class="eyebrow">Working Hypothesis</p>
+          <strong>第 8 關卡關與第二天後目標感不足同時發生</strong>
+          <p>結果不是單一功能出問題，而是難度曲線與中期目標空窗一起放大流失。</p>
+        </div>
+        <div class="hero-panel-card">
+          <p class="eyebrow">Deliverable</p>
+          <strong>3 頁內分析邏輯 + 4 個圖表 + 一頁決策面板</strong>
+          <p>讓面試官看到你不只會看數字，也會把數字翻成可執行的產品提案。</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="metric-grid">
+      <article class="metric-card">
+        <span>D1 留存</span>
+        <strong>43.2%</strong>
+        <p>新安裝玩家首日留存仍在可接受區間，問題集中在後段流失。</p>
+      </article>
+      <article class="metric-card">
+        <span>D7 留存</span>
+        <strong>12.1%</strong>
+        <p>相較上月同期下降 11 個百分點，是這次異常的核心指標。</p>
+      </article>
+      <article class="metric-card">
+        <span>卡關關卡</span>
+        <strong>Level 8</strong>
+        <p>第 8 關失敗次數明顯高於其他關卡，且集中出現在 Day 2 晚間。</p>
+      </article>
+      <article class="metric-card">
+        <span>高風險分群</span>
+        <strong>低活躍新手</strong>
+        <p>低活躍且未參與活動的新玩家，是 D7 前最先流失的一群。</p>
+      </article>
+    </section>
+
+    <section class="case-section" id="dashboard">
+      <div class="case-section-heading">
+        <div>
+          <p class="eyebrow">Dashboard</p>
+          <h3>把「哪裡掉、誰先掉、掉之前做了什麼」收進同一頁</h3>
+        </div>
+        <p>這頁的目的不是做很花的圖，而是讓面試官一眼看到分析順序與結論是怎麼串起來的。</p>
+      </div>
+
+      <div class="case-grid">
+        <article class="case-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Chart 01</p>
+              <h3>Cohort 留存趨勢</h3>
+            </div>
+            <span class="mini-tag">Trend View</span>
+          </div>
+          <div class="legend">
+            <span class="legend-d1">D1</span>
+            <span class="legend-d3">D3</span>
+            <span class="legend-d7">D7</span>
+          </div>
+          <div class="trend-list" id="retention-trend"></div>
+        </article>
+
+        <article class="case-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Chart 02</p>
+              <h3>玩家分群留存比較</h3>
+            </div>
+            <span class="mini-tag">Segment</span>
+          </div>
+          <div class="segment-list" id="segment-list"></div>
+        </article>
+      </div>
+
+      <div class="case-grid" style="margin-top: 16px;">
+        <article class="case-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Chart 03</p>
+              <h3>卡關與流失前事件</h3>
+            </div>
+            <span class="mini-tag">Drop-Off</span>
+          </div>
+          <div class="blocker-list" id="blocker-list"></div>
+        </article>
+
+        <article class="case-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">SQL Practice</p>
+              <h3>會怎麼查這個問題</h3>
+            </div>
+            <span class="mini-tag">Query</span>
+          </div>
+          <pre class="code-block">SELECT
+  install_date,
+  COUNT(DISTINCT player_id) AS installs,
+  SUM(CASE WHEN retained_d7 = 'yes' THEN 1 ELSE 0 END) AS retained_d7_users
+FROM player_events
+GROUP BY install_date
+ORDER BY install_date;</pre>
+          <p class="note-text">接著再往下切關卡事件、活動參與與 payer / activity segment，確認異常是不是集中在某些 cohort。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="case-section" id="insights">
+      <div class="case-section-heading">
+        <div>
+          <p class="eyebrow">Insights</p>
+          <h3>最後不是只報告異常，而是給出可以被驗證的改善方向</h3>
+        </div>
+        <p>這三塊剛好能對應你面試時最需要說清楚的能力：觀察、推論、落地提案。</p>
+      </div>
+      <div class="case-card-grid">
+        <article class="case-card">
+          <p class="eyebrow">Observation</p>
+          <h4>第 8 關把 Day 2 的玩家卡住了</h4>
+          <p>失敗人次在 Level 8 明顯抬升，且未通關玩家在之後 24 小時內的登入率快速下滑。</p>
+        </article>
+        <article class="case-card">
+          <p class="eyebrow">Hypothesis</p>
+          <h4>第二天之後的短期目標不夠明確</h4>
+          <p>活動參與率較低的 cohort，D3 到 D7 留存落差更大，代表中期誘因不足。</p>
+        </article>
+        <article class="case-card">
+          <p class="eyebrow">Action</p>
+          <h4>先做難度修正，再補第二天後的導流任務</h4>
+          <p>優先調整 Level 8 難度與提示，再新增 Day 2 任務獎勵與召回訊息驗證改善幅度。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="case-section-heading">
+        <div>
+          <p class="eyebrow">Analytics Workflow</p>
+          <h3>這個作品現在不只是展示頁，也有真正能跑的分析程式</h3>
+        </div>
+        <p>專案包含 Python、pandas、SQL 與 R-ready 檔案，可直接對應數據分析職缺常見能力需求。</p>
+      </div>
+      <div class="case-card-grid">
+        <article class="case-card">
+          <p class="eyebrow">Step 01</p>
+          <h4>SQL / CSV 先把 cohort 問題切乾淨</h4>
+          <p>先用 `player_events.csv` 與 SQL 查詢確認 install cohort、留存與事件分布，再往下切分群。</p>
+        </article>
+        <article class="case-card">
+          <p class="eyebrow">Step 02</p>
+          <h4>Python 產出可重複執行的分析摘要</h4>
+          <p>`retention_analysis.py` 會輸出 JSON、CSV 與 Markdown 摘要，讓分析過程不是一次性手算。</p>
+        </article>
+        <article class="case-card">
+          <p class="eyebrow">Step 03</p>
+          <h4>pandas 工作流補足正式交付物</h4>
+          <p>`retention_analysis_pandas.py` 會輸出 Excel、PNG 圖與 Markdown，讓這題更像真正分析專案。</p>
+        </article>
+        <article class="case-card">
+          <p class="eyebrow">Step 04</p>
+          <h4>R 版本當成額外展示選項</h4>
+          <p>另外補上 `retention_summary.R`，方便對應需要 R 基礎的分析職缺。</p>
+        </article>
+      </div>
+      <div class="case-file-grid">
+        <a class="case-file-card" href="../../works/project-02-retention-analysis/python/retention_analysis.py">
+          <span class="eyebrow">Tech 01</span>
+          <strong>Python Script</strong>
+          <p>主分析腳本，會從假資料輸出實際可讀的結果檔。</p>
+        </a>
+        <a class="case-file-card" href="../../works/project-02-retention-analysis/outputs/retention_report.md">
+          <span class="eyebrow">Tech 02</span>
+          <strong>Python Output</strong>
+          <p>整理好的觀察摘要，可直接接到分析報告或面試講法。</p>
+        </a>
+        <a class="case-file-card" href="../../works/project-02-retention-analysis/python/retention_analysis_pandas.py">
+          <span class="eyebrow">Tech 03</span>
+          <strong>pandas Script</strong>
+          <p>用更標準的分析工作流輸出 Excel、PNG 圖表與 Markdown 報告。</p>
+        </a>
+        <a class="case-file-card" href="../../works/project-02-retention-analysis/r/retention_summary.R">
+          <span class="eyebrow">Tech 04</span>
+          <strong>R Script</strong>
+          <p>用 base R 寫 cohort 彙整，讓作品集更符合分析職常見工具需求。</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="case-section-heading">
+        <div>
+          <p class="eyebrow">Formal Report</p>
+          <h3>這份案例現在已經整理成正式分析報告，不只是展示頁</h3>
+        </div>
+        <p>正式報告版整理了問題定義、分析方法、圖表解讀與行動建議，方便 HR 與用人主管快速理解專案價值。</p>
+      </div>
+      <div class="case-card-grid">
+        <article class="case-card">
+          <p class="eyebrow">Report 01</p>
+          <h4>問題定義與分析方法</h4>
+          <p>先把「D7 留存下滑」拆成 cohort、關卡卡點、活動參與與玩家分群四個可驗證問題。</p>
+        </article>
+        <article class="case-card">
+          <p class="eyebrow">Report 02</p>
+          <h4>圖表與觀察整合</h4>
+          <p>把 Python 產出的圖表接回正式敘事，讓圖不是單獨存在，而是有結論支撐。</p>
+        </article>
+        <article class="case-card">
+          <p class="eyebrow">Report 03</p>
+          <h4>行動建議與驗證規劃</h4>
+          <p>最後不只說哪裡有問題，也清楚列出應該先做什麼與要怎麼驗證。</p>
+        </article>
+      </div>
+      <div class="case-file-grid">
+        <a class="case-file-card" href="../../works/project-02-retention-analysis/analysis-report.md">
+          <span class="eyebrow">Report File</span>
+          <strong>analysis-report.md</strong>
+          <p>正式報告版，適合直接當成面試附件或作品集 supporting document。</p>
+        </a>
+        <a class="case-file-card" href="../../works/project-02-retention-analysis/outputs/retention_report.md">
+          <span class="eyebrow">Summary File</span>
+          <strong>Python Summary</strong>
+          <p>分析腳本先輸出摘要，再往上整理成完整報告，流程更像真的分析工作。</p>
+        </a>
+        <a class="case-file-card" href="../../works/project-02-retention-analysis/outputs/retention_summary.json">
+          <span class="eyebrow">Data Output</span>
+          <strong>Structured Result</strong>
+          <p>把結果轉成結構化檔案，方便後續接 dashboard 或其他分析流程。</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="case-section-heading">
+        <div>
+          <p class="eyebrow">pandas Deliverables</p>
+          <h3>這一版開始具備更像資料分析師日常交付的檔案格式</h3>
+        </div>
+        <p>除了原本的 JSON / CSV / SVG，現在也有 Excel 工作簿與 matplotlib 產出的 PNG 圖表。</p>
+      </div>
+      <div class="case-file-grid chart-preview-grid">
+        <a class="case-file-card chart-preview-card" href="../../works/project-02-retention-analysis/outputs/chart-cohort-retention-pandas.png">
+          <span class="eyebrow">pandas Chart 01</span>
+          <strong>Cohort PNG</strong>
+          <img src="../../works/project-02-retention-analysis/outputs/chart-cohort-retention-pandas.png" alt="pandas 產出的 cohort 留存圖">
+          <p>更像正式報告與簡報會用的 PNG 輸出格式。</p>
+        </a>
+        <a class="case-file-card chart-preview-card" href="../../works/project-02-retention-analysis/outputs/chart-segment-d7-pandas.png">
+          <span class="eyebrow">pandas Chart 02</span>
+          <strong>Segment PNG</strong>
+          <img src="../../works/project-02-retention-analysis/outputs/chart-segment-d7-pandas.png" alt="pandas 產出的玩家分群圖">
+          <p>用 matplotlib 輸出分群圖，讓這題更接近實際分析交付物。</p>
+        </a>
+        <a class="case-file-card" href="../../works/project-02-retention-analysis/outputs/retention-analysis-pandas.xlsx">
+          <span class="eyebrow">pandas Output</span>
+          <strong>Excel Workbook</strong>
+          <p>包含 overview、cohort、segment、churn event 與 level summary 多個工作表。</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="case-section-heading">
+        <div>
+          <p class="eyebrow">Generated Charts</p>
+          <h3>Python 現在也會真的輸出圖表，面試時可以直接打開看</h3>
+        </div>
+        <p>這組圖不是手動排版，而是由 `retention_analysis.py` 根據假資料自動生成的分析輸出。</p>
+      </div>
+      <div class="case-file-grid chart-preview-grid">
+        <a class="case-file-card chart-preview-card" href="../../works/project-02-retention-analysis/outputs/chart-cohort-retention.svg">
+          <span class="eyebrow">Chart Output 01</span>
+          <strong>Cohort Retention</strong>
+          <img src="../../works/project-02-retention-analysis/outputs/chart-cohort-retention.svg" alt="Python 產出的 cohort 留存圖">
+          <p>從 install cohort 看 D1 / D3 / D7 的落點變化，像真正分析報告的第一張圖。</p>
+        </a>
+        <a class="case-file-card chart-preview-card" href="../../works/project-02-retention-analysis/outputs/chart-segment-d7.svg">
+          <span class="eyebrow">Chart Output 02</span>
+          <strong>Segment D7 Retention</strong>
+          <img src="../../works/project-02-retention-analysis/outputs/chart-segment-d7.svg" alt="Python 產出的玩家分群留存圖">
+          <p>把不同 payer segment 的 D7 留存攤開來看，讓分群分析更有說服力。</p>
+        </a>
+        <a class="case-file-card chart-preview-card" href="../../works/project-02-retention-analysis/outputs/chart-churn-events.svg">
+          <span class="eyebrow">Chart Output 03</span>
+          <strong>Top Churn Events</strong>
+          <img src="../../works/project-02-retention-analysis/outputs/chart-churn-events.svg" alt="Python 產出的流失事件圖">
+          <p>整理流失前最常見的事件，讓你的優先驗證假設更有資料依據。</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="case-section-heading">
+        <div>
+          <p class="eyebrow">Deliverables</p>
+          <h3>專案交付內容</h3>
+        </div>
+        <p>網站頁面是面試展示版，實際素材則整理在 `works/project-02-retention-analysis/`。</p>
+      </div>
+      <ul class="case-data-list">
+        <li><strong>analysis-brief.md</strong><br>問題背景、分析流程與初步假設。</li>
+        <li><strong>analysis-report.md</strong><br>正式報告版，整理成可投遞與可面試展示的分析敘事。</li>
+        <li><strong>mock-data/player_events.csv</strong><br>可直接拿來做 cohort、segment 與關卡事件分析的假資料。</li>
+        <li><strong>sql/cohort_queries.sql</strong><br>練習把留存問題翻成 SQL 查詢。</li>
+        <li><strong>python/retention_analysis.py</strong><br>讀取資料並輸出 JSON / CSV / Markdown 摘要的 Python 分析流程。</li>
+        <li><strong>python/retention_analysis_pandas.py</strong><br>用 pandas 與 matplotlib 輸出 Excel、PNG 與 Markdown 報表。</li>
+        <li><strong>r/retention_summary.R</strong><br>補一份 R 版本的 cohort 彙整腳本。</li>
+        <li><strong>outputs/chart-*.svg</strong><br>Python 自動生成的分析圖表，可直接放進報告或面試展示。</li>
+        <li><strong>outputs/retention-analysis-pandas.xlsx</strong><br>更像正式分析交付物的工作簿版本。</li>
+        <li><strong>dashboard-spec.md</strong><br>定義應該放進分析頁的 4 個核心圖表。</li>
+      </ul>
+      <div class="case-file-grid">
+        <a class="case-file-card" href="../../works/project-02-retention-analysis/README.md">
+          <span class="eyebrow">Dossier 01</span>
+          <strong>README</strong>
+          <p>專案目標、產出項目與面試展示定位。</p>
+        </a>
+        <a class="case-file-card" href="../../works/project-02-retention-analysis/analysis-brief.md">
+          <span class="eyebrow">Dossier 02</span>
+          <strong>Analysis Brief</strong>
+          <p>分析背景、異常切法與初步假設。</p>
+        </a>
+        <a class="case-file-card" href="../../works/project-02-retention-analysis/analysis-report.md">
+          <span class="eyebrow">Dossier 03</span>
+          <strong>Formal Report</strong>
+          <p>把問題、方法、觀察與行動建議整成一份完整分析報告。</p>
+        </a>
+        <a class="case-file-card" href="../../works/project-02-retention-analysis/dashboard-spec.md">
+          <span class="eyebrow">Dossier 04</span>
+          <strong>Dashboard Spec</strong>
+          <p>整理真正該放進面板的圖與指標，不只是一堆視覺。</p>
+        </a>
+        <a class="case-file-card" href="../../works/project-02-retention-analysis/outputs/retention-analysis-pandas.xlsx">
+          <span class="eyebrow">Dossier 05</span>
+          <strong>pandas Workbook</strong>
+          <p>把多個 summary sheet 整理到 Excel，展示更貼近分析師工作交付的版本。</p>
+        </a>
+        <a class="case-file-card" href="../../works/project-02-retention-analysis/outputs/retention_summary.json">
+          <span class="eyebrow">Dossier 06</span>
+          <strong>Analysis Output</strong>
+          <p>把 cohort、segment 與風險訊號輸出成結構化結果，像真正的分析專案。</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="case-section" id="interview">
+      <div class="case-section-heading">
+        <div>
+          <p class="eyebrow">Project Summary</p>
+          <h3>專案簡述</h3>
+        </div>
+        <p>以下內容可直接作為作品欄或履歷中的專案說明。</p>
+      </div>
+      <article class="interview-card">
+        <p>
+          本專案針對手遊 D7 留存下滑問題進行分析，內容包含 cohort、玩家分群、關卡卡點與事件觀察，並提出關卡難度調整、第二天後任務導流與低活躍玩家召回等優化方向。專案同時包含 Python、pandas、SQL、圖表與正式分析報告。
+        </p>
+      </article>
+    </section>
+  </div>
+
+  <script type="module" src="./project2.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+player_id,install_date,day_number,session_count,last_level,reached_level_8,event_type,payer_segment,retained_d1,retained_d3,retained_d7
+1001,2026-05-01,1,3,4,no,tutorial_end,non_payer,yes,yes,no
+1002,2026-05-01,1,4,6,no,level_clear,non_payer,yes,yes,yes
+1003,2026-05-01,2,2,8,yes,level_fail,non_payer,yes,no,no
+1004,2026-05-01,3,1,8,yes,event_join,light_payer,yes,yes,no
+1005,2026-05-02,1,5,7,no,level_clear,non_payer,yes,yes,yes
+1006,2026-05-02,2,2,8,yes,level_fail,non_payer,yes,no,no
+1007,2026-05-02,3,4,10,yes,purchase,mid_payer,yes,yes,yes
+1008,2026-05-02,3,1,7,no,event_ignore,non_payer,yes,no,no
+1009,2026-05-03,1,3,5,no,tutorial_end,non_payer,yes,yes,no
+1010,2026-05-03,2,2,8,yes,level_fail,non_payer,yes,no,no
+1011,2026-05-03,4,5,12,yes,event_join,light_payer,yes,yes,yes
+1012,2026-05-03,5,1,6,no,event_ignore,non_payer,yes,no,no

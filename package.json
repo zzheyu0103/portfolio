@@ -1,0 +1,15 @@
+{
+  "name": "igs-portfolio",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "powershell -NoProfile -Command \"Set-Location site; vite --configLoader runner\"",
+    "build": "powershell -NoProfile -Command \"Set-Location site; vite build --configLoader runner --outDir ../dist --emptyOutDir\"",
+    "build:pages": "powershell -NoProfile -Command \"Set-Location site; vite build --mode github-pages --configLoader runner --outDir ../dist-pages --emptyOutDir\"",
+    "preview": "powershell -NoProfile -Command \"Set-Location site; vite preview --configLoader runner\""
+  },
+  "devDependencies": {
+    "vite": "^7.0.0"
+  }
+}

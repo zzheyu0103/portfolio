@@ -1,0 +1,76 @@
+{
+  "source_file": "mock-data\\player_events.csv",
+  "player_count": 12,
+  "retention": {
+    "d1_pct": 100.0,
+    "d3_pct": 58.3,
+    "d7_pct": 33.3
+  },
+  "cohort_summary": [
+    {
+      "install_date": "2026-05-01",
+      "installs": 4,
+      "retained_d1_pct": 100.0,
+      "retained_d3_pct": 75.0,
+      "retained_d7_pct": 25.0
+    },
+    {
+      "install_date": "2026-05-02",
+      "installs": 4,
+      "retained_d1_pct": 100.0,
+      "retained_d3_pct": 50.0,
+      "retained_d7_pct": 50.0
+    },
+    {
+      "install_date": "2026-05-03",
+      "installs": 4,
+      "retained_d1_pct": 100.0,
+      "retained_d3_pct": 50.0,
+      "retained_d7_pct": 25.0
+    }
+  ],
+  "segment_summary": [
+    {
+      "segment": "light_payer",
+      "players": 2,
+      "retained_d3_pct": 100.0,
+      "retained_d7_pct": 50.0
+    },
+    {
+      "segment": "mid_payer",
+      "players": 1,
+      "retained_d3_pct": 100.0,
+      "retained_d7_pct": 100.0
+    },
+    {
+      "segment": "non_payer",
+      "players": 9,
+      "retained_d3_pct": 44.4,
+      "retained_d7_pct": 22.2
+    }
+  ],
+  "risk_signals": {
+    "level_8_churners": 4,
+    "level_8_churner_pct": 33.3,
+    "event_join_d7_pct": 50.0,
+    "event_ignore_d7_pct": 0.0
+  },
+  "top_churn_events": [
+    {
+      "event_type": "level_fail",
+      "count": 3
+    },
+    {
+      "event_type": "tutorial_end",
+      "count": 2
+    },
+    {
+      "event_type": "event_ignore",
+      "count": 2
+    },
+    {
+      "event_type": "event_join",
+      "count": 1
+    }
+  ]
+}

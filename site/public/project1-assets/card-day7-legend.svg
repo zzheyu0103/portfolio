@@ -1,0 +1,23 @@
+<svg width="240" height="320" viewBox="0 0 240 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="240" height="320" rx="28" fill="url(#bg)"/>
+  <rect x="16" y="16" width="208" height="288" rx="22" stroke="rgba(255,255,255,0.34)" stroke-width="2"/>
+  <circle cx="120" cy="112" r="66" fill="rgba(255,242,196,0.16)"/>
+  <path d="M120 52L138 92H182L146 118L160 164L120 138L80 164L94 118L58 92H102L120 52Z" fill="url(#star)"/>
+  <path d="M86 184H154L166 234H74L86 184Z" fill="url(#plate)"/>
+  <path d="M72 246H168L180 274H60L72 246Z" fill="rgba(255,223,162,0.22)"/>
+  <defs>
+    <linearGradient id="bg" x1="16" y1="8" x2="220" y2="308" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#433420"/>
+      <stop offset="0.5" stop-color="#9A6B27"/>
+      <stop offset="1" stop-color="#F0C768"/>
+    </linearGradient>
+    <linearGradient id="star" x1="120" y1="52" x2="120" y2="164" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF9E1"/>
+      <stop offset="1" stop-color="#FFD66E"/>
+    </linearGradient>
+    <linearGradient id="plate" x1="120" y1="184" x2="120" y2="234" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF3CC"/>
+      <stop offset="1" stop-color="#D9993D"/>
+    </linearGradient>
+  </defs>
+</svg>

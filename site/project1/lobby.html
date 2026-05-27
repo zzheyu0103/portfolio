@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 01 Prototype | 新手大廳</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./project1.css">
+</head>
+<body data-page="lobby">
+  <div class="game-shell">
+    <header class="game-topbar">
+      <div class="game-brand">
+        <span class="game-brand-mark">P1</span>
+        <div>
+          <p class="eyebrow" id="page-eyebrow">LOBBY</p>
+          <h1 id="page-title">新手大廳</h1>
+        </div>
+      </div>
+      <div class="game-top-actions">
+        <a class="game-button-ghost" href="./index.html">回流程首頁</a>
+        <button class="game-button-ghost" data-reset-flow type="button">重設流程</button>
+      </div>
+    </header>
+
+    <section class="game-day-selector">
+      <div class="game-day-selector-copy">
+        <p class="eyebrow">DAY SELECT</p>
+        <strong id="day-selector-title"></strong>
+        <p id="day-selector-text"></p>
+      </div>
+      <div class="game-day-selector-buttons" id="day-selector-buttons"></div>
+    </section>
+
+    <div class="game-layout">
+      <aside class="game-sidebar">
+        <section class="game-player-card">
+          <div class="game-player-head">
+            <div class="game-avatar"></div>
+            <div class="game-player-copy">
+              <span class="eyebrow">玩家檔案</span>
+              <strong id="player-card-title"></strong>
+              <p id="player-card-text"></p>
+            </div>
+          </div>
+          <div class="game-energy" id="player-energy"></div>
+        </section>
+
+        <section class="game-side-section">
+          <span class="game-side-label">流程導覽</span>
+          <nav class="game-nav-list">
+            <a class="game-nav-button" data-nav="lobby" href="./lobby.html">新手大廳</a>
+            <a class="game-nav-button" data-nav="missions" href="./missions.html">任務頁</a>
+            <a class="game-nav-button" data-nav="battle" href="./battle-result.html">對戰結果</a>
+            <a class="game-nav-button" data-nav="deck" href="./deck-builder.html">組牌頁</a>
+            <a class="game-nav-button" data-nav="completion" href="./completion.html">完成獎勵</a>
+          </nav>
+        </section>
+
+        <section class="game-side-section">
+          <span class="game-side-label">目前狀態</span>
+          <ul class="game-side-list" id="game-side-status"></ul>
+        </section>
+
+        <div class="game-toast" id="game-toast"></div>
+      </aside>
+
+      <main class="game-panel">
+        <section class="game-scene game-scene-lobby">
+          <div class="game-scene-copy">
+            <span class="game-scene-label" id="lobby-scene-label"></span>
+            <strong id="lobby-scene-title"></strong>
+            <p id="lobby-scene-text"></p>
+          </div>
+          <div class="game-scene-icon"><img src="" alt=""></div>
+        </section>
+
+        <div class="game-panel-header">
+          <div>
+            <p class="eyebrow">LOBBY SNAPSHOT</p>
+            <h3 id="lobby-header-title"></h3>
+          </div>
+          <div class="game-panel-actions">
+            <a class="game-button" id="lobby-primary-link" href="./missions.html"><span id="lobby-primary-label"></span></a>
+            <a class="game-button-ghost" id="lobby-secondary-link" href="./deck-builder.html"><span id="lobby-secondary-label"></span></a>
+          </div>
+        </div>
+
+        <div class="meta-grid" id="lobby-stats"></div>
+
+        <section class="game-card-grid" id="lobby-detail-grid"></section>
+      </main>
+    </div>
+  </div>
+  <script type="module" src="./project1.js"></script>
+  <script>
+    if (window.location.protocol === "file:") {
+      const loadFallback = (src) => {
+        const script = document.createElement("script");
+        script.src = src;
+        script.defer = true;
+        script.dataset.fallback = "true";
+        return script;
+      };
+
+      const primary = loadFallback("./project1.js");
+      primary.onerror = () => {
+        if (!document.querySelector('script[data-fallback="runtime"]')) {
+          const runtime = loadFallback("../project1-runtime.js");
+          runtime.dataset.fallback = "runtime";
+          document.head.appendChild(runtime);
+        }
+      };
+      document.head.appendChild(primary);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+item_type,item_name,cost_or_output,source_or_sink,note
+event_currency,祈福幣,50,每日登入,基本免費產出
+event_currency,祈福幣,120,每日任務全解,主力免費產出
+event_currency,祈福幣,80,限時挑戰,高活躍玩家補充來源
+reward,抽福袋一次,100,消耗,隨機獎勵入口
+reward,史詩造型碎片,300,兌換,中階目標
+reward,限定頭像框,500,兌換,長線目標
+bundle,新春禮包A,150,付費購買,加速活動進度
+bundle,新春禮包B,300,付費購買,高價值禮包

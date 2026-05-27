@@ -1,0 +1,25 @@
+<svg width="240" height="320" viewBox="0 0 240 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="240" height="320" rx="28" fill="url(#bg)"/>
+  <rect x="16" y="16" width="208" height="288" rx="22" stroke="rgba(255,255,255,0.34)" stroke-width="2"/>
+  <circle cx="120" cy="104" r="52" fill="rgba(255,241,204,0.18)"/>
+  <path d="M120 64L146 88L138 144H102L94 88L120 64Z" fill="url(#crystal)"/>
+  <path d="M86 176C86 152 100 138 120 138C140 138 154 152 154 176V228H86V176Z" fill="url(#robe)"/>
+  <path d="M100 230H140L154 268H86L100 230Z" fill="rgba(255,221,162,0.18)"/>
+  <circle cx="120" cy="206" r="18" fill="rgba(255,248,216,0.92)"/>
+  <path d="M120 192L124 200H133L126 205L128.5 214L120 209L111.5 214L114 205L107 200H116L120 192Z" fill="#915A1F"/>
+  <defs>
+    <linearGradient id="bg" x1="18" y1="10" x2="218" y2="306" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#43377B"/>
+      <stop offset="0.56" stop-color="#855179"/>
+      <stop offset="1" stop-color="#F0A163"/>
+    </linearGradient>
+    <linearGradient id="crystal" x1="120" y1="64" x2="120" y2="144" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF7D8"/>
+      <stop offset="1" stop-color="#FFC36A"/>
+    </linearGradient>
+    <linearGradient id="robe" x1="120" y1="138" x2="120" y2="228" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF1C6"/>
+      <stop offset="1" stop-color="#C77646"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,20 @@
+<svg width="240" height="320" viewBox="0 0 240 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="240" height="320" rx="28" fill="url(#bg)"/>
+  <rect x="16" y="16" width="208" height="288" rx="22" stroke="rgba(255,255,255,0.28)" stroke-width="2"/>
+  <circle cx="120" cy="116" r="60" fill="rgba(255,211,199,0.14)"/>
+  <path d="M120 64L174 96V158L120 190L66 158V96L120 64Z" fill="url(#crest)"/>
+  <path d="M104 104H136V148H104V104Z" fill="rgba(255,246,235,0.92)"/>
+  <path d="M120 86L126 100H142L130 110L135 126L120 116L105 126L110 110L98 100H114L120 86Z" fill="#AA3D26"/>
+  <path d="M78 212H162L174 250H66L78 212Z" fill="rgba(255,214,172,0.18)"/>
+  <defs>
+    <linearGradient id="bg" x1="16" y1="12" x2="220" y2="306" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4A1B1C"/>
+      <stop offset="0.53" stop-color="#9A3529"/>
+      <stop offset="1" stop-color="#F47A4B"/>
+    </linearGradient>
+    <linearGradient id="crest" x1="120" y1="64" x2="120" y2="190" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF4EB"/>
+      <stop offset="1" stop-color="#FFB187"/>
+    </linearGradient>
+  </defs>
+</svg>

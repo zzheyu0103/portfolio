@@ -1,0 +1,24 @@
+<svg width="240" height="320" viewBox="0 0 240 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="240" height="320" rx="28" fill="url(#bg)"/>
+  <rect x="16" y="16" width="208" height="288" rx="22" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+  <circle cx="120" cy="118" r="64" fill="rgba(183,255,225,0.14)"/>
+  <path d="M120 58L144 92L120 122L96 92L120 58Z" fill="url(#core)"/>
+  <path d="M84 144H156L168 232H72L84 144Z" fill="url(#armor)"/>
+  <path d="M120 92V210" stroke="rgba(255,255,255,0.7)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M88 174L120 142L152 174" stroke="rgba(255,255,255,0.7)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <defs>
+    <linearGradient id="bg" x1="18" y1="12" x2="224" y2="306" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#113C47"/>
+      <stop offset="0.56" stop-color="#16816D"/>
+      <stop offset="1" stop-color="#7AE3BF"/>
+    </linearGradient>
+    <linearGradient id="core" x1="120" y1="58" x2="120" y2="122" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EFFFF7"/>
+      <stop offset="1" stop-color="#7DFFE8"/>
+    </linearGradient>
+    <linearGradient id="armor" x1="120" y1="144" x2="120" y2="232" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D2FFF2"/>
+      <stop offset="1" stop-color="#2B816B"/>
+    </linearGradient>
+  </defs>
+</svg>

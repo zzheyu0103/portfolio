@@ -1,0 +1,28 @@
+<svg width="240" height="320" viewBox="0 0 240 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="240" height="320" rx="28" fill="url(#bg)"/>
+  <rect x="16" y="16" width="208" height="288" rx="22" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+  <circle cx="120" cy="122" r="64" fill="rgba(255,228,176,0.16)"/>
+  <path d="M120 72C97.9 72 80 89.9 80 112V146C80 163.7 94.3 178 112 178H128C145.7 178 160 163.7 160 146V112C160 89.9 142.1 72 120 72Z" fill="url(#armor)"/>
+  <path d="M98 166H142L154 230H86L98 166Z" fill="url(#cape)"/>
+  <path d="M102 98C102 88.1 110.1 80 120 80C129.9 80 138 88.1 138 98V112H102V98Z" fill="#FFE2B5"/>
+  <path d="M92 112H148V126C148 141.5 135.5 154 120 154C104.5 154 92 141.5 92 126V112Z" fill="#FFD7A1"/>
+  <path d="M100 96C103.7 84.7 112 78 120 78C128 78 136.3 84.7 140 96V104H100V96Z" fill="#4A2B2A"/>
+  <path d="M80 238H160L173 274H67L80 238Z" fill="rgba(255,216,121,0.25)"/>
+  <circle cx="120" cy="214" r="22" fill="rgba(255,235,184,0.9)"/>
+  <path d="M120 198L124.5 207H134L126 213.5L129 223L120 217.5L111 223L114 213.5L106 207H115.5L120 198Z" fill="#7A4616"/>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="240" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#34214E"/>
+      <stop offset="0.52" stop-color="#683B58"/>
+      <stop offset="1" stop-color="#E38852"/>
+    </linearGradient>
+    <linearGradient id="armor" x1="120" y1="72" x2="120" y2="178" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF3D2"/>
+      <stop offset="1" stop-color="#C1804F"/>
+    </linearGradient>
+    <linearGradient id="cape" x1="120" y1="166" x2="120" y2="230" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7D2F33"/>
+      <stop offset="1" stop-color="#3E1B32"/>
+    </linearGradient>
+  </defs>
+</svg>
