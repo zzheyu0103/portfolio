@@ -7,7 +7,7 @@
 - `site/`
   對外展示的網站頁面
 - `works/`
-  作品企劃、分析稿、任務表與面試講稿
+  專案文件、分析稿、任務表與展示說明
 - `dist/`
   打包輸出結果
 
@@ -80,4 +80,4 @@ npm run build:pages
 - `/project2/index.html`
   手遊留存異常分析展示頁
 - `/project3/index.html`
-  節慶活動企劃與 KPI 展示頁
+  節慶活動設計與 KPI 展示頁

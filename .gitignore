@@ -4,4 +4,6 @@ dist
 dist-fixed
 dist-final
 dist-pages
+.matplotlib
+works/*/.matplotlib
 .DS_Store

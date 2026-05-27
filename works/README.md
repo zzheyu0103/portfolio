@@ -5,11 +5,11 @@
 ## 專案列表
 
 - `project-01-onboarding-system/`
-  新手教學、玩家旅程、七日任務表、Wireframe 規格、面試講稿
+  新手教學、玩家旅程、七日任務表、Wireframe 規格、展示說明
 - `project-02-retention-analysis/`
   分析簡報、假資料、SQL 查詢、Python/R 腳本、儀表板規格
 - `project-03-event-ops-dashboard/`
-  活動企劃、獎勵經濟表、活動時程、Python KPI 腳本、pandas 工作簿、正式報告、儀表板規格
+  活動設計、獎勵經濟表、活動時程、Python KPI 腳本、pandas 工作簿、正式報告、儀表板規格
 
 ## 對應網站展示頁
 

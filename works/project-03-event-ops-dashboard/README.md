@@ -1,8 +1,8 @@
-# Project 03｜節慶活動企劃與成效追蹤儀表板
+# Project 03｜節慶活動設計與成效追蹤儀表板
 
 ## 專案目標
 
-做出一份帶有活動規則、獎勵經濟與 KPI 追蹤的 Live Ops 企劃案。
+做出一份帶有活動規則、獎勵經濟與 KPI 追蹤的 Live Ops 分析案例。
 
 ## 你要做出的東西
 
@@ -25,10 +25,10 @@
 
 ## 最後應該長成什麼
 
-- 一份活動企劃書
+- 一份活動設計文件
 - 一張獎勵與經濟表
 - 一頁 KPI 儀表板
-- 一段能講清楚活動目的的面試版本
+- 一段能講清楚活動目的的專案簡述
 
 ## 現在已經補上的技術證據
 
@@ -43,7 +43,7 @@
 - `outputs/liveops_summary.json`
   結構化 KPI 結果
 - `outputs/liveops_report.md`
-  面試時可以直接拿來講的營運摘要
+  可直接用於作品展示的營運摘要
 - `outputs/liveops-analysis-pandas.xlsx`
   更像分析師交付物的 Excel 工作簿
 - `outputs/chart-liveops-participation-pandas.png`
