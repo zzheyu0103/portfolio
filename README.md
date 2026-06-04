@@ -1,6 +1,6 @@
 # 作品集
 
-這是一個用 `Vite` 包起來的作品集專案，現在已整理成「網站」和「作品內容」分開的結構。
+這份作品集以靜態網站方式整理，內容分成「網站展示」和「專案資料」兩個區塊，方便對外瀏覽，也方便後續持續補內容。
 
 ## 專案結構
 
@@ -11,7 +11,7 @@
 - `dist/`
   打包輸出結果
 
-## 在 Cursor 執行
+## 本機執行
 
 1. 安裝套件
    `npm install`
@@ -19,22 +19,22 @@
    `npm run dev`
 3. 打開終端顯示的本機網址，通常會是 `http://localhost:5173`
 
-## 可編輯內容
+## 主要內容位置
 
 - `site/index.html`
-  作品集網站文案與頁面結構
+  首頁文案與頁面結構
 - `site/styles.css`
   視覺風格與排版
 - `site/project1/`
-  主打遊戲流程 prototype
+  主打的遊戲流程原型頁面
 - `site/project2/`
   留存分析展示頁
 - `site/project3/`
   Live Ops 活動展示頁
 - `works/*.md`
-  每個作品的完整內容稿
+  各專案的說明文件、分析稿與規格
 
-## 建議工作流
+## 建議更新方式
 
 1. 先在 `works/` 補完整內容
 2. 再把濃縮版本更新到 `site/index.html`
@@ -71,12 +71,12 @@ npm run build:pages
 - `site/vite.config.js`
   已補 GitHub Pages 相對路徑模式
 
-## 目前可直接展示的頁面
+## 目前可直接查看的頁面
 
 - `/`
   首頁作品集
 - `/project1/index.html`
-  卡牌新手流程多頁 demo
+  卡牌新手流程多頁展示
 - `/project2/index.html`
   手遊留存異常分析展示頁
 - `/project3/index.html`

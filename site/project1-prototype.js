@@ -66,7 +66,7 @@ if (root) {
   }
 
   function currentToast() {
-    if (state.completed) return "新手畢業流程已完成，現在可以把這段 demo 當成作品集主展示。";
+    if (state.completed) return "新手畢業流程已完成，這段內容可以作為作品集主案例。";
     if (state.screen === "failure") return "戰敗畫面現在會把挫折轉成下一步動作，這是留存設計的關鍵。";
     if (state.screen === "deck") {
       return state.deckApplied
@@ -83,7 +83,7 @@ if (root) {
     if (state.completed) return "目前狀態：已完成新手七日收尾演示";
     if (!state.deckApplied) return "目前狀態：正在建立第一副牌組";
     if (!state.battleRecovered) return "目前狀態：牌組已補強，準備重新挑戰對戰";
-    return "目前狀態：今日任務完成，可展示 Day 7 收尾";
+    return "目前狀態：今日任務完成，可查看 Day 7 收尾";
   }
 
   function syncDayRail() {
@@ -152,14 +152,14 @@ if (root) {
       rewardHeader.innerHTML = `
         <p class="eyebrow">DAY 7 CLEAR</p>
         <h5>你已完成新手收尾演示</h5>
-        <p>現在這個畫面可以拿來展示玩家完成七日任務後，如何被導到下一階段內容。</p>
+        <p>這個畫面主要呈現玩家完成七日任務後，如何被導到下一階段內容。</p>
       `;
       rewardCards.innerHTML = `
         <article class="proto-reward-card"><strong>史詩卡 x1</strong><p>玩家感受到明顯成長。</p></article>
         <article class="proto-reward-card"><strong>完成徽章</strong><p>強化新手期結束的成就感。</p></article>
         <article class="proto-reward-card"><strong>週活動入口</strong><p>把玩家接到長期留存內容。</p></article>
       `;
-      rewardButton.textContent = "已完成展示";
+      rewardButton.textContent = "已完成流程";
       rewardButton.disabled = true;
       rewardSecondary.textContent = "回任務頁";
       return;

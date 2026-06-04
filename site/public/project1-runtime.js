@@ -385,7 +385,7 @@ const DAY_CONFIG = {
       highlights: [
         { eyebrow: "DAY 3 預告", title: "卡牌升級與進階獎勵", text: "明天登入將開啟卡牌升級教學，並送雙倍經驗 1 小時。" },
         { eyebrow: "設計重點", title: "一天只教一件事", text: "玩家今天只需要理解組牌補強與再戰驗證，不會一次塞太多概念。" },
-        { eyebrow: "下一步", title: "去對戰結果頁", text: "那一頁會展示玩家輸掉後，如何被引導到補強與重新嘗試。" }
+        { eyebrow: "下一步", title: "去對戰結果頁", text: "那一頁會呈現玩家輸掉後，如何被引導到補強與重新嘗試。" }
       ]
     },
     battle: {
@@ -598,7 +598,7 @@ const DAY_CONFIG = {
       secondaryLabel: "回任務頁",
       secondaryHref: "/project1/missions.html",
       deckName: "成長驗證流",
-      deckDescription: "以守護者艾爾為核心，展示升級對前中期穩定度的幫助。",
+      deckDescription: "以守護者艾爾為核心，呈現升級對前中期穩定度的幫助。",
       featuredCard: { name: "守護者艾爾 +1", role: "前排 / 防守 / 升級", rarity: "UP", asset: "/project1-assets/art-guardian-card.svg" },
       replaceNote: "升級後護盾值提高，讓 Day 3 的勝利更像是成長帶來的結果。",
       slots: [
@@ -930,7 +930,7 @@ const DAY_CONFIG = {
       deckName: "今日登入補給",
       deckDescription: "不是牌組調整，而是把回流獎勵設計成有價值但不會通膨的補給。",
       featuredCard: { name: "新手補給箱", role: "抽卡券 / 金幣 / 素材", rarity: "FREE", asset: "/project1-assets/art-victory-emblem.svg" },
-      replaceNote: "Day 5 的「組牌頁」在這裡被轉化成獎勵頁，展示每日回訪節奏如何銜接任務系統。",
+      replaceNote: "Day 5 的「組牌頁」在這裡被轉化成獎勵頁，呈現每日回訪節奏如何銜接任務系統。",
       slots: [
         { name: "抽卡券 x1", role: "短期期待", highlight: true },
         { name: "金幣 x200", role: "日常補給" },
@@ -1289,7 +1289,7 @@ const DAY_CONFIG = {
       lockTitle: "完成 Day 7 三項任務後解鎖",
       lockText: "先完成七日累積任務、選擇偏好流派與收藏初階套牌，這個畢業頁才會正式解鎖。",
       header: "新手畢業獎勵",
-      claimLabel: "領取並完成新手畢業展示",
+      claimLabel: "領取並完成新手畢業",
       rewards: [
         { title: "史詩卡 x1", text: "立即提升牌組上限，建立畢業感。", epic: true },
         { title: "七日完成徽章", text: "強化身份認同與完成感。" },
@@ -1483,7 +1483,7 @@ function rewardReady(dayState) {
 }
 
 function nextRecommendation(state, config, dayState) {
-  if (state.finished) return "七日流程已完整完成，可直接帶面試官看排行戰、週活動與公會銜接。";
+  if (state.finished) return "七日流程已完整完成，可以直接往後看排行戰、週活動與公會銜接。";
   if (rewardReady(dayState) && !dayState.rewardClaimed) return "今天的任務已全數完成，現在可以前往獎勵頁收尾並解鎖下一天。";
   const mission = mergedMissions(config, dayState).find((item) => item.current < item.total);
   if (!mission) return `Day ${config.day} 任務已完成，可前往完成獎勵頁。`;
@@ -1491,7 +1491,7 @@ function nextRecommendation(state, config, dayState) {
 }
 
 function toastFor(page, config, state, dayState) {
-  if (state.finished) return "這組七日流程已完整畢業，現在很適合直接當面試 demo 主案例。";
+  if (state.finished) return "這組七日流程已完整畢業，已經可以作為主案例查看。";
   if (page === "home") return `Day ${config.day} 的核心是「${config.goal}」，首頁要先把今天的設計重點講清楚。`;
   if (page === "lobby") return `大廳目前對應 Day ${config.day}，重點是把今日目標、下一步和明日預告綁在一起。`;
   if (page === "missions") return `任務頁目前是 Day ${config.day}，三項任務都要直接對應今天唯一的學習重點。`;
@@ -1848,7 +1848,7 @@ function renderHome(config, dayState) {
       {
         eyebrow: "NEXT UNLOCK",
         title: config.tomorrowUnlock,
-        text: "我會讓今天的收尾自然接到明天的內容，而不是突然切斷。"
+        text: "今天的收尾會自然接到明天的內容，不會突然切斷。"
       }
     ].map((item) => `
       <article class="game-highlight-card">
@@ -1924,7 +1924,7 @@ function renderLobby(config) {
       {
         label: "SHOWCASE ANGLE",
         value: meta.chapter,
-        text: "這一天最適合 demo 的重點，是它如何把今天的設計目標收斂成一條簡單流程。"
+        text: "這一天最適合先看的地方，是它如何把今天的設計目標收斂成一條簡單流程。"
       },
       {
         label: "UNLOCK STATUS",
@@ -2225,7 +2225,7 @@ function renderDeckPage(config, dayState) {
       <article class="game-compare-card is-highlight">
         <span class="game-stat-label">AFTER SYNC</span>
         <strong>牌組戰力 ${powerAfter}</strong>
-        <p>${hasDoneDeckAction ? "目前已套用今天的推薦牌組，展示時可直接切回戰鬥頁驗證。" : "完成這一步後，就能更合理地把玩家送去戰鬥驗證或收尾。"}</p>
+        <p>${hasDoneDeckAction ? "目前已套用今天的推薦牌組，接下來可直接切回戰鬥頁驗證。" : "完成這一步後，就能更合理地把玩家送去戰鬥驗證或收尾。"}</p>
       </article>
     `;
   }
@@ -2241,12 +2241,12 @@ function renderDeckPage(config, dayState) {
       {
         label: "PREFERRED BUILD",
         value: meta.deckChoices[0],
-        text: "主展示路線會保留給最能講清楚今天設計目的的套牌。"
+        text: "主要路線會保留給最能講清楚今天設計目的的套牌。"
       },
       {
         label: "DEMO ANGLE",
-        value: hasDoneDeckAction ? "已完成同步" : "等待展示同步",
-        text: hasDoneDeckAction ? "現在很適合切到戰鬥或完成頁，展示調整後的結果。" : "完成同步後，這一天的流程就會從牌組切回結果驗證。"
+        value: hasDoneDeckAction ? "已完成同步" : "等待牌組同步",
+        text: hasDoneDeckAction ? "現在很適合切到戰鬥或完成頁，確認調整後的結果。" : "完成同步後，這一天的流程就會從牌組切回結果驗證。"
       }
     ].map((item) => `
       <article class="game-command-card">
@@ -2302,13 +2302,13 @@ function renderDeckPage(config, dayState) {
     detailGrid.insertAdjacentHTML("beforeend", `
       <article class="game-highlight-card game-deck-choices">
         <span class="eyebrow">ARCHETYPE OPTIONS</span>
-        <strong>今天可展示的流派方向</strong>
+        <strong>今天可查看的流派方向</strong>
         <div class="game-choice-grid">
           ${meta.deckChoices.map((choice, index) => `
             <div class="game-choice-card ${index === 0 ? "is-active" : ""}">
               <span class="game-stat-label">${index === 0 ? "RECOMMENDED" : "OPTION"}</span>
               <strong>${choice}</strong>
-              <p>${index === 0 ? "這張卡與今天任務的關聯最直接，適合 demo 時主打。" : "可當作替代展示，讓面試官看到你有做不同路線思考。"}</p>
+              <p>${index === 0 ? "這張卡和今天任務的關聯最直接，適合當成主路線。" : "也可以當作替代方案，補充不同路線的思考。"}</p>
             </div>
           `).join("")}
         </div>
@@ -2407,14 +2407,14 @@ function renderCompletionPage(config, dayState) {
       },
       {
         label: "NEXT DAY",
-        title: dayState.rewardClaimed ? "繼續展示下一天" : config.tomorrowUnlock,
-        text: dayState.rewardClaimed ? "今天已經收尾完成，現在可直接切去下一天繼續 demo。" : "這是收尾之後最重要的下一步期待。",
+        title: dayState.rewardClaimed ? "繼續查看下一天" : config.tomorrowUnlock,
+        text: dayState.rewardClaimed ? "今天已經收尾完成，現在可直接切去下一天繼續查看。" : "這是收尾之後最重要的下一步期待。",
         href: projectPage("missions.html")
       },
       {
         label: "PORTFOLIO MODE",
         title: "回作品集入口",
-        text: "若你要從整份作品集導覽切進來，這裡能接回首頁主展示。",
+        text: "如果是從整份作品集切進來，這裡可以回到首頁主案例。",
         href: PORTFOLIO_BASE
       }
     ].map((item) => `
@@ -2542,7 +2542,7 @@ function attachActionHandlers(state, config) {
       saveState(latest);
       setFlash({
         message: latest.finished
-          ? "新手七日流程已完整畢業，現在可以直接拿這整套當面試主打作品。"
+          ? "新手七日流程已完整畢業，現在可以直接把這整套當成主打作品。"
           : `Day ${latest.currentDay - 1} 已收尾完成，已為你切換到 Day ${latest.currentDay}。`,
         effect: latest.finished ? "crown" : getDayVisuals(Math.max(1, latest.currentDay - 1)).completionEffect
       });
